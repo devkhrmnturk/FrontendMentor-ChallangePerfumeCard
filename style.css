@@ -1,0 +1,209 @@
+/* Typography */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+h1 {
+  font-family: "Fraunces", system-ui;
+  font-size: 2.125rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--heading-color);
+}
+
+h4 {
+  font-family: "Montserrat", system-ui;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.375rem;
+  line-height: 1;
+  color: var(--paragraph-color);
+}
+
+p,
+del {
+  font-family: "Montserrat", system-ui;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  max-inline-size: 66ch;
+  color: var(--paragraph-color);
+}
+
+.btn-txt {
+  font-family: "Montserrat", system-ui;
+  font-weight: 600;
+}
+
+/* font size for >600px */
+/* @media (min-width: 660px) {
+  p,
+  s {
+    font-size: 0.90rem;
+  }
+
+  h4 {
+    font-size: 0.86rem;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+} */
+
+/* Variable */
+:root {
+  --background-color: hsl(30, 38%, 92%);
+  --primary-color: hsl(158, 36%, 37%);
+  --paragraph-color: hsl(228, 12%, 48%);
+  --heading-color: hsl(212, 21%, 14%);
+  --white-color: hsl(0, 0%, 100%);
+
+  --spacing-outside-desktop: 2.25rem;
+  --spacing-outside: 1.5rem; /* for card padding */
+  --spacing-inside: 1.25rem; /* for card contents gap */
+
+  --spacing-normal: 0.875rem; /* for button height */
+  --spacing-mini: 0.625rem; /* for category text spacing */
+
+  --radius: 0.75rem; /*card-radius*/
+  --radius-btn: 0.5rem; /* btn radius*/
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+/* Main style */
+body {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  /* centering the card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* safe area of card, on mobile*/
+  padding: 1rem;
+}
+
+/* the card itself */
+main {
+  background-color: var(--white-color);
+  border-radius: var(--radius);
+  max-width: 300px;
+}
+
+picture > img {
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+/* card contents */
+article {
+  padding: var(--spacing-outside);
+  /* inside content align */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-inside);
+}
+
+.category {
+  margin-bottom: 1rem;
+}
+
+/* price section align*/
+section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.price {
+  color: var(--primary-color);
+}
+
+.btn {
+  cursor: pointer;
+
+  width: 100%;
+  padding: var(--spacing-normal) 0;
+
+  /* color border styling */
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: var(--radius-btn);
+
+  /* align, inside of btn */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-mini);
+}
+
+.btn:hover {
+    background: hsl(158, 58%, 24%);
+}
+
+.cart-icon {
+  background: url(images/icon-cart.svg);
+  background-size: cover;
+  width: 15px;
+  height: 16px;
+}
+
+/* for dektop */
+
+@media (min-width: 600px) {
+  /* the card itself */
+  main {
+    display: flex;
+    max-width: fit-content;
+  }
+
+  main > picture {
+    width: 300px;
+    display: flex;
+  }
+
+  .card-img {
+    width: 100%;
+    border-radius: var(--radius) 0 0 var(--radius);
+  }
+
+  .category {
+    margin-bottom: var(--spacing-outside);
+  }
+
+  main > article {
+    width: 300px;
+    justify-content: space-between;
+    padding: var(--spacing-outside-desktop);
+  }
+}
+
+/* attribution */
+body {
+  position: relative;
+}
+
+.attribution {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%,-100%);
+  font-size: 0.5rem;
+  overflow: hidden;
+}
+
+@media (max-width:600px) {
+  .attribution {
+    display: none;
+  }
+}
