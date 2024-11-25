@@ -1,2 +1,2 @@
 #Live site <br/>
-https://devkhrmnturk.github.io/perfume-card/
+https://devkhrmnturk.github.io/FrontendMentor-ChallangePerfumeCard/
